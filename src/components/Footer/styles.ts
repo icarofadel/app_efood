@@ -13,6 +13,10 @@ export const FooterBar = styled.footer`
     align-items: center;
     padding-top: 40px;
   }
+
+  a {
+    padding: 8px;
+  }
 `
 
 export const Text = styled.p`

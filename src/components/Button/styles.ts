@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom'
 import { cores } from '../../styles'
 
 export const ButtonContainer = styled.button`
-  background-color: ${cores.vermelho};
-  color: ${cores.bege};
-  padding: 6px;
-  font-size: 14px;
+  background-color: ${cores.bege};
+  color: ${cores.vermelho};
+  padding: 4px 74px;
+  font-size: 16px;
   text-decoration: none;
+  border: none;
 `
 
 export const ButtonLink = styled(Link)`

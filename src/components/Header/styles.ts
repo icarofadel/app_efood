@@ -6,6 +6,7 @@ import fundo from '../../assets/images/fundo.png'
 export const HeaderBar = styled.header`
   background-image: url(${fundo});
   color: ${cores.vermelho};
+  padding-top: 40px;
 `
 export const Logo = styled.div`
   display: flex;
@@ -26,7 +27,7 @@ export const NavBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 65px 171px;
+  padding: 0 171px 65px;
 
   a {
     text-decoration: none;
