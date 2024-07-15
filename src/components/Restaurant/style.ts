@@ -46,9 +46,3 @@ export const Description = styled.p`
   font-weight: 400;
   text-align: left;
 `
-export const Botao = styled.a`
-  background-color: ${cores.vermelho};
-  color: ${cores.bege};
-  padding: 6px;
-  font-size: 14px;
-`

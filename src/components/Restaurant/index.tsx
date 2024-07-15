@@ -5,7 +5,6 @@ import {
   Card,
   Description,
   Infos,
-  Botao,
   ContainerRating,
   SpaceTitle,
   SpaceDescription
