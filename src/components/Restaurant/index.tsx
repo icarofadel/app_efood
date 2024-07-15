@@ -1,3 +1,4 @@
+import Button from '../Button'
 import Tag from '../Tag'
 
 import {
@@ -47,7 +48,13 @@ const Store = ({
           </ContainerRating>
         </SpaceTitle>
         <Description>{description}</Description>
-        <Botao>Saiba mais</Botao>
+        <Button
+          type="link"
+          to="/cardapio"
+          title="Clique aqui para conhecer o cardapio"
+        >
+          Saiba mais
+        </Button>
       </SpaceDescription>
     </Card>
   </li>
