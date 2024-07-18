@@ -1,12 +1,9 @@
-import { Link } from 'react-router-dom'
-
 import CardapioList from '../../components/CardapioList'
 import Cardapio from '../../models/cardapio'
 import imagem3 from '../../assets/images/image 3.png'
 
 import Banner from '../../components/Banner'
 import Header from '../../components/Header'
-import { HeaderBar, NavBar } from '../../components/Header/styles'
 
 const CardapioOptions: Cardapio[] = [
   {
@@ -60,13 +57,7 @@ const CardapioOptions: Cardapio[] = [
 ]
 const Perfil = () => (
   <>
-    <HeaderBar>
-      <NavBar>
-        <Link to={'/'}>Restaurantes</Link>
-        <Header />
-        <span>0 produto(s) no carrinho</span>
-      </NavBar>
-    </HeaderBar>
+    <Header page={'perfil'} />
     <Banner />
     <CardapioList title={''} cardapio={CardapioOptions} />
   </>

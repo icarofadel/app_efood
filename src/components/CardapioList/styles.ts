@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const ContainerOptions = styled.section`
-  padding-top: 56px;
+  padding: 80px 0 120px;
 `
 
 export const List = styled.ul`

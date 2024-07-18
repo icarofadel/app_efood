@@ -27,7 +27,7 @@ export const NavBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 171px 65px;
+  padding-bottom: 65px;
 
   a {
     text-decoration: none;

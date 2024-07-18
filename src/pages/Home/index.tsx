@@ -4,7 +4,6 @@ import RestaurantsList from '../../components/RestaurantsList'
 import imagem from '../../assets/images/imagem.png'
 import imagem2 from '../../assets/images/image 1.png'
 import star from '../../assets/images/estrela.png'
-import { HeaderBar, Title } from '../../components/Header/styles'
 import Header from '../../components/Header'
 
 const restaurantes: Restaurant[] = [
@@ -53,10 +52,7 @@ const restaurantes: Restaurant[] = [
 
 const Home = () => (
   <>
-    <HeaderBar>
-      <Header />
-      <Title>Viva experiências gastronômicas no conforto da sua casa</Title>
-    </HeaderBar>
+    <Header page={'home'} />
     <RestaurantsList title="" restaurant={restaurantes} />
   </>
 )

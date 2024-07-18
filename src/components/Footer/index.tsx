@@ -7,7 +7,7 @@ import facebook from '../../assets/images/facebook-round-svgrepo-com 1.png'
 
 const Footer = () => (
   <FooterBar>
-    <div>
+    <div className="container">
       <img src={logo} alt="efood" />
     </div>
     <div>

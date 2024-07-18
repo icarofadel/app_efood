@@ -5,7 +5,7 @@ import imagem from '../../assets/images/imagem.png'
 const Banner = () => (
   <>
     <Imagem style={{ backgroundImage: `url(${imagem})` }}>
-      <div>
+      <div className="container">
         <Regiao>Italiana</Regiao>
         <Titulo>La Dolce Vita Trattoria</Titulo>
       </div>
