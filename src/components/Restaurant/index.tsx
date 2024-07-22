@@ -1,6 +1,8 @@
 import Button from '../Button'
 import Tag from '../Tag'
 
+import star from '../../assets/images/estrela.png'
+
 import {
   Card,
   Description,
@@ -11,52 +13,45 @@ import {
 } from './style'
 
 type Props = {
-  imagem: string
-  infos: string[]
-  category: string
-  title: string
-  description: string
-  rating: string
-  star: string
+  id: number
+  titulo: string
+  destacado?: string[]
+  tipo: string
+  avaliacao: number
+  descricao: string
+  capa: string
 }
 
-const Store = ({
-  imagem,
-  infos,
-  category,
-  title,
-  description,
-  rating,
-  star
-}: Props) => (
-  <li>
-    <Card>
-      <img src={imagem} alt={imagem} />
-      <Infos>
-        {infos.map((info) => (
-          <Tag key={info}>{info}</Tag>
-        ))}
-        <Tag>{category}</Tag>
-      </Infos>
-      <SpaceDescription>
-        <SpaceTitle>
-          <h3>{title}</h3>
-          <ContainerRating>
-            <span>{rating}</span>
-            <img src={star} alt={star} />
-          </ContainerRating>
-        </SpaceTitle>
-        <Description>{description}</Description>
-        <Button
-          type="link"
-          to="/cardapio"
-          title="Clique aqui para conhecer o cardapio"
-        >
-          Saiba mais
-        </Button>
-      </SpaceDescription>
-    </Card>
-  </li>
-)
+const Store = ({ id, titulo, tipo, avaliacao, descricao, capa }: Props) => {
+  return (
+    <>
+      <li>
+        <Card>
+          <img src={capa} alt={capa} />
+          <Infos>
+            <Tag key={tipo}>{tipo}</Tag>
+          </Infos>
+          <SpaceDescription>
+            <SpaceTitle>
+              <h3>{titulo}</h3>
+              <ContainerRating>
+                <span>{avaliacao}</span>
+                <img src={star} alt={star} />
+              </ContainerRating>
+            </SpaceTitle>
+            <Description>{descricao}</Description>
+            <Button
+              type="link"
+              to={`/restaurante/${id}`}
+              title="Clique aqui para conhecer o cardapio"
+            >
+              Saiba mais
+            </Button>
+          </SpaceDescription>
+        </Card>
+      </li>
+    </>
+  )
+}
 
 export default Store

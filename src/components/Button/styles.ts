@@ -6,10 +6,12 @@ import { cores } from '../../styles'
 export const ButtonContainer = styled.button`
   background-color: ${cores.bege};
   color: ${cores.vermelho};
-  padding: 4px 74px;
+  padding: 4px 7px;
   font-size: 16px;
+  font-weight: bold;
   text-decoration: none;
   border: none;
+  width: 100%;
 `
 
 export const ButtonLink = styled(Link)`

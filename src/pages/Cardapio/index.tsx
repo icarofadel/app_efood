@@ -1,66 +1,34 @@
-import CardapioList from '../../components/CardapioList'
-import Cardapio from '../../models/cardapio'
-import imagem3 from '../../assets/images/image 3.png'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { Restaurante } from '../Home'
 
+import CardapioList from '../../components/CardapioList'
 import Banner from '../../components/Banner'
 import Header from '../../components/Header'
 
-const CardapioOptions: Cardapio[] = [
-  {
-    id: 1,
-    imagem: imagem3,
-    title: 'Pizza Marguerita',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    button: 'Adicionar ao carrinho'
-  },
-  {
-    id: 2,
-    imagem: imagem3,
-    title: 'Pizza Marguerita',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    button: 'Adicionar ao carrinho'
-  },
-  {
-    id: 3,
-    imagem: imagem3,
-    title: 'Pizza Marguerita',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    button: 'Adicionar ao carrinho'
-  },
-  {
-    id: 4,
-    imagem: imagem3,
-    title: 'Pizza Marguerita',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    button: 'Adicionar ao carrinho'
-  },
-  {
-    id: 5,
-    imagem: imagem3,
-    title: 'Pizza Marguerita',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    button: 'Adicionar ao carrinho'
-  },
-  {
-    id: 6,
-    imagem: imagem3,
-    title: 'Pizza Marguerita',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    button: 'Adicionar ao carrinho'
+const Perfil = () => {
+  const { id } = useParams()
+  const [restaurante, setRestaurante] = useState<Restaurante | null>(null)
+
+  useEffect(() => {
+    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
+      .then((res) => res.json())
+      .then((res) => setRestaurante(res))
+  }, [id])
+
+  if (!restaurante) {
+    return <div>Carregando...</div>
   }
-]
-const Perfil = () => (
-  <>
-    <Header page={'perfil'} />
-    <Banner />
-    <CardapioList title={''} cardapio={CardapioOptions} />
-  </>
-)
+
+  const { cardapio } = restaurante
+
+  return (
+    <>
+      <Header page="perfil" />
+      <Banner banner={restaurante} />
+      <CardapioList cardapio={cardapio} />
+    </>
+  )
+}
 
 export default Perfil

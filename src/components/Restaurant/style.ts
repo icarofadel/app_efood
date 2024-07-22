@@ -11,6 +11,12 @@ export const Card = styled.div`
   ${TagContainer} {
     margin-right: 8px;
   }
+
+  > img {
+    width: 100%;
+    height: 218px;
+    object-fit: cover;
+  }
 `
 
 export const Infos = styled.div`
