@@ -53,10 +53,10 @@ export const ModalContent = styled.div`
   header {
     display: flex;
     justify-content: space-between;
-  }
 
-  > img {
-    width: 100%;
+    > img {
+      cursor: pointer;
+    }
   }
 
   .conteudo {
