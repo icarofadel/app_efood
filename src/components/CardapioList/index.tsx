@@ -5,8 +5,19 @@ import { ContainerOptions, List, Modal, ModalContent } from './styles'
 import close from '../../assets/images/close.png'
 import Button from '../Button'
 
+import { useDispatch } from 'react-redux'
+
+import { add, open } from '../../store/reducers/cart'
+
 type Props = {
   cardapio: CardapioItem[]
+}
+
+export const formataPreco = (preco = 0) => {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(preco)
 }
 
 const CardapioList = ({ cardapio }: Props) => {
@@ -14,13 +25,6 @@ const CardapioList = ({ cardapio }: Props) => {
   const [itemSelecionado, setItemSelecionado] = useState<CardapioItem | null>(
     null
   )
-
-  const formataTexto = (preco = 0) => {
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }).format(preco)
-  }
 
   const abrirModal = (item: CardapioItem) => {
     setItemSelecionado(item)
@@ -30,6 +34,13 @@ const CardapioList = ({ cardapio }: Props) => {
   const fecharModal = () => {
     setModal(false)
     setItemSelecionado(null)
+  }
+
+  const dispatch = useDispatch()
+
+  const addToCart = (item: CardapioItem) => {
+    dispatch(add(item))
+    dispatch(open())
   }
 
   return (
@@ -67,11 +78,12 @@ const CardapioList = ({ cardapio }: Props) => {
                 <p>{itemSelecionado.porcao}</p>
                 <Button
                   type="button"
-                  title={`Adicionar ao carrinho - ${formataTexto(
+                  onClick={() => addToCart(itemSelecionado)}
+                  title={`Adicionar ao carrinho - ${formataPreco(
                     itemSelecionado.preco
                   )}`}
                 >
-                  {`Adicionar ao carrinho - ${formataTexto(
+                  {`Adicionar ao carrinho - ${formataPreco(
                     itemSelecionado.preco
                   )}`}
                 </Button>

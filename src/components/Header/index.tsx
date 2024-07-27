@@ -1,13 +1,24 @@
-import { HeaderBar, Logo, NavBar, Title } from './styles'
+import { HeaderBar, Logo, NavBar, Title, CartButton } from './styles'
 
 import logo from '../../assets/images/logo.png'
 import { Link } from 'react-router-dom'
+
+import { open } from '../../store/reducers/cart'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
 
 type Props = {
   page: 'home' | 'perfil'
 }
 
 const Header = ({ page }: Props) => {
+  const dispatch = useDispatch()
+  const { prato } = useSelector((state: RootReducer) => state.cart)
+
+  const openCart = () => {
+    dispatch(open())
+  }
+
   return (
     <HeaderBar>
       <div className="container">
@@ -28,7 +39,9 @@ const Header = ({ page }: Props) => {
               <Logo>
                 <img src={logo} alt={logo} />
               </Logo>
-              <span>0 produto(s) no carrinho</span>
+              <CartButton onClick={openCart}>
+                {prato.length} produto(s) no carrinho
+              </CartButton>
             </NavBar>
           </>
         )}

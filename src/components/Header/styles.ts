@@ -34,3 +34,6 @@ export const NavBar = styled.div`
     color: ${cores.vermelho};
   }
 `
+export const CartButton = styled.a`
+  cursor: pointer;
+`

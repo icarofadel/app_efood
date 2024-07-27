@@ -5,6 +5,7 @@ import { Restaurante } from '../Home'
 import CardapioList from '../../components/CardapioList'
 import Banner from '../../components/Banner'
 import Header from '../../components/Header'
+import Cart from '../../components/Cart'
 
 const Perfil = () => {
   const { id } = useParams()
@@ -27,6 +28,7 @@ const Perfil = () => {
       <Header page="perfil" />
       <Banner banner={restaurante} />
       <CardapioList cardapio={cardapio} />
+      <Cart />
     </>
   )
 }
