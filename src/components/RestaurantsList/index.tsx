@@ -1,16 +1,16 @@
 import { Restaurante } from '../../pages/Home'
 import Store from '../Restaurant'
 
-import { Container, List } from './styles'
+import * as S from './styles'
 
 export type Props = {
   restaurantes: Restaurante[]
 }
 
 const RestaurantsList = ({ restaurantes }: Props) => (
-  <Container>
+  <S.Container>
     <div className="container">
-      <List>
+      <S.List>
         {restaurantes.map((restaurant) => (
           <Store
             key={restaurant.id}
@@ -22,9 +22,9 @@ const RestaurantsList = ({ restaurantes }: Props) => (
             capa={restaurant.capa}
           />
         ))}
-      </List>
+      </S.List>
     </div>
-  </Container>
+  </S.Container>
 )
 
 export default RestaurantsList

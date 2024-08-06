@@ -41,6 +41,14 @@ export const Sidebar = styled.aside`
     font-size: 14px;
     max-width: 100%;
     width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .empty-text {
+    font-size: 14px;
+    line-height: 22px;
+    color: ${cores.text};
+    text-align: center;
   }
 `
 export const Prices = styled.p`

@@ -3,14 +3,7 @@ import Tag from '../Tag'
 
 import star from '../../assets/images/estrela.png'
 
-import {
-  Card,
-  Description,
-  Infos,
-  ContainerRating,
-  SpaceTitle,
-  SpaceDescription
-} from './style'
+import * as S from './style'
 
 type Props = {
   id: number
@@ -26,20 +19,20 @@ const Store = ({ id, titulo, tipo, avaliacao, descricao, capa }: Props) => {
   return (
     <>
       <li>
-        <Card>
+        <S.Card>
           <img src={capa} alt={capa} />
-          <Infos>
+          <S.Infos>
             <Tag key={tipo}>{tipo}</Tag>
-          </Infos>
-          <SpaceDescription>
-            <SpaceTitle>
+          </S.Infos>
+          <S.SpaceDescription>
+            <S.SpaceTitle>
               <h3>{titulo}</h3>
-              <ContainerRating>
+              <S.ContainerRating>
                 <span>{avaliacao}</span>
                 <img src={star} alt={star} />
-              </ContainerRating>
-            </SpaceTitle>
-            <Description>{descricao}</Description>
+              </S.ContainerRating>
+            </S.SpaceTitle>
+            <S.Description>{descricao}</S.Description>
             <Button
               type="link"
               to={`/restaurante/${id}`}
@@ -47,8 +40,8 @@ const Store = ({ id, titulo, tipo, avaliacao, descricao, capa }: Props) => {
             >
               Saiba mais
             </Button>
-          </SpaceDescription>
-        </Card>
+          </S.SpaceDescription>
+        </S.Card>
       </li>
     </>
   )

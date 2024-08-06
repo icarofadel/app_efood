@@ -1,11 +1,12 @@
-import { HeaderBar, Logo, NavBar, Title, CartButton } from './styles'
-
-import logo from '../../assets/images/logo.png'
-import { Link } from 'react-router-dom'
-
-import { open } from '../../store/reducers/cart'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
+import { Link } from 'react-router-dom'
+
+import logo from '../../assets/images/logo.png'
+
+import { open } from '../../store/reducers/cart'
+
+import * as S from './styles'
 
 type Props = {
   page: 'home' | 'perfil'
@@ -20,33 +21,33 @@ const Header = ({ page }: Props) => {
   }
 
   return (
-    <HeaderBar>
+    <S.HeaderBar>
       <div className="container">
         {page === 'home' && (
           <>
-            <Logo>
+            <S.Logo>
               <img src={logo} alt={logo} />
-            </Logo>
-            <Title>
+            </S.Logo>
+            <S.Title>
               Viva experiências gastronômicas no conforto da sua casa
-            </Title>
+            </S.Title>
           </>
         )}
         {page === 'perfil' && (
           <>
-            <NavBar>
+            <S.NavBar>
               <Link to={'/'}>Restaurantes</Link>
-              <Logo>
+              <S.Logo>
                 <img src={logo} alt={logo} />
-              </Logo>
-              <CartButton onClick={openCart}>
+              </S.Logo>
+              <S.CartButton onClick={openCart}>
                 {prato.length} produto(s) no carrinho
-              </CartButton>
-            </NavBar>
+              </S.CartButton>
+            </S.NavBar>
           </>
         )}
       </div>
-    </HeaderBar>
+    </S.HeaderBar>
   )
 }
 

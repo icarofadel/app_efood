@@ -1,13 +1,13 @@
 import { useState } from 'react'
-import { CardapioItem } from '../../pages/Home'
-import Options from '../Cardapio'
-import { ContainerOptions, List, Modal, ModalContent } from './styles'
-import close from '../../assets/images/close.png'
-import Button from '../Button'
-
 import { useDispatch } from 'react-redux'
 
+import { CardapioItem } from '../../pages/Home'
+import Options from '../Cardapio'
+import Button from '../Button'
 import { add, open } from '../../store/reducers/cart'
+import close from '../../assets/images/close.png'
+
+import * as S from './styles'
 
 type Props = {
   cardapio: CardapioItem[]
@@ -45,9 +45,9 @@ const CardapioList = ({ cardapio }: Props) => {
 
   return (
     <>
-      <ContainerOptions>
+      <S.ContainerOptions>
         <div className="container">
-          <List>
+          <S.List>
             {cardapio.map((item) => (
               <Options
                 key={item.id}
@@ -58,12 +58,12 @@ const CardapioList = ({ cardapio }: Props) => {
                 onMaisDetalhes={() => abrirModal(item)}
               />
             ))}
-          </List>
+          </S.List>
         </div>
-      </ContainerOptions>
+      </S.ContainerOptions>
       {itemSelecionado && (
-        <Modal className={modal ? 'visivel' : ''}>
-          <ModalContent>
+        <S.Modal className={modal ? 'visivel' : ''}>
+          <S.ModalContent>
             <header className="fechar">
               <img src={close} alt="Fechar" onClick={fecharModal} />
             </header>
@@ -89,9 +89,9 @@ const CardapioList = ({ cardapio }: Props) => {
                 </Button>
               </div>
             </div>
-          </ModalContent>
+          </S.ModalContent>
           <div className="overlay" onClick={fecharModal}></div>
-        </Modal>
+        </S.Modal>
       )}
     </>
   )

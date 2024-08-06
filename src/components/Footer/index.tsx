@@ -1,12 +1,12 @@
-import { FooterBar, Text } from './styles'
-
 import logo from '../../assets/images/logo.png'
 import twitter from '../../assets/images/twitter-2-svgrepo-com 1.png'
 import instagram from '../../assets/images/instagram-round-svgrepo-com (1) 1.png'
 import facebook from '../../assets/images/facebook-round-svgrepo-com 1.png'
 
+import * as S from './styles'
+
 const Footer = () => (
-  <FooterBar>
+  <S.FooterBar>
     <div className="container">
       <img src={logo} alt="efood" />
     </div>
@@ -22,13 +22,13 @@ const Footer = () => (
       </a>
     </div>
     <div>
-      <Text>
+      <S.Text>
         A efood é uma plataforma para divulgação de estabelecimentos, a
         responsabilidade pela entrega, qualidade dos produtos é toda do
         estabelecimento contratado.{' '}
-      </Text>
+      </S.Text>
     </div>
-  </FooterBar>
+  </S.FooterBar>
 )
 
 export default Footer
