@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakponints, cores } from '../../styles'
 
 export const Imagem = styled.div`
   width: 100%;
@@ -7,6 +7,10 @@ export const Imagem = styled.div`
   display: block;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media (max-width: ${breakponints.tablet}) {
+    height: 100%;
+  }
 `
 
 export const Titulo = styled.h2`

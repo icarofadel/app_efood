@@ -8,6 +8,11 @@ export const cores = {
   text: '#FFFFFF'
 }
 
+export const breakponints = {
+  desktop: '1024px',
+  tablet: '768px'
+}
+
 export const GlobalCss = createGlobalStyle`
   *{
     margin: 0;

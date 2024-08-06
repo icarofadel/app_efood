@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { RootReducer } from '../../store'
 import { Link } from 'react-router-dom'
 
+import { RootReducer } from '../../store'
 import logo from '../../assets/images/logo.png'
 
 import { open } from '../../store/reducers/cart'

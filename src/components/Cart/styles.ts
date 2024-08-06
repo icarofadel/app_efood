@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakponints, cores } from '../../styles'
 import { ButtonContainer } from '../Button/styles'
 
 import lixeira from '../../assets/images/lixeira.png'
@@ -85,6 +85,7 @@ export const CartItem = styled.li`
     margin-top: 16px;
     font-weight: 400;
     font-size: 14px;
+    color: ${cores.vermelho};
   }
 
   button {

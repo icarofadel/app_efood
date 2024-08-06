@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakponints, cores } from '../../styles'
 
 export const CardOptions = styled.div`
   background-color: ${cores.vermelho};
@@ -17,6 +17,11 @@ export const CardOptions = styled.div`
     width: 304px;
     height: 167px;
     border-radius: 8px;
+
+    @media (max-width: ${breakponints.tablet}) {
+      width: 100%;
+      object-fit: cover;
+    }
   }
 `
 

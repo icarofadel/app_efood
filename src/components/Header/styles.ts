@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { cores } from '../../styles'
+import { breakponints, cores } from '../../styles'
 import fundo from '../../assets/images/fundo.png'
 
 export const HeaderBar = styled.header`
@@ -22,6 +22,10 @@ export const Title = styled.h1`
   font-weight: 900;
   line-height: 42px;
   text-align: center;
+
+  @media (max-width: ${breakponints.tablet}) {
+    width: 100%;
+  }
 `
 export const NavBar = styled.div`
   display: flex;
